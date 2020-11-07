@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
+import Crawler from '@/page/Node/Crawler'
 
 Vue.use(Router)
 
@@ -8,9 +8,9 @@ export default new Router({
   mode:'history',
   routes: [
     {
-      path: '/Home',
-      name: 'Home',
-      component: Home
+      path: '/Crawler',
+      name: 'Crawler',
+      component: Crawler
     }
   ]
 })

@@ -1,0 +1,6 @@
+.el-menu {
+  border-right: none;
+}
+.el-menu .router-link-active {
+  color: aliceblue;
+}
