@@ -23,7 +23,7 @@ export default {
 <style lang="">
     .Backtop_wrapper{
         position: absolute;
-        right: 30px;
+        right: 40px;
         bottom: 40px;
         width: 40px;
         height: 40px;
@@ -33,6 +33,8 @@ export default {
         background-color: #ffffff; 
         color: #ff4040;
         cursor: pointer;
+        border: 1px solid #eee;
+        z-index: 9;
     }
     .Backtop_wrapper:hover{ 
         animation: fadeIn .5s linear infinite alternate;
@@ -41,7 +43,7 @@ export default {
         from{
             box-shadow: 0 0 1px 1px #eee;
         }to{
-            box-shadow: 0 0 5px 4px rgb(196, 60, 60);
+            box-shadow: 0 0 10px 1px rgb(60, 158, 196);
         }
     }
 </style>

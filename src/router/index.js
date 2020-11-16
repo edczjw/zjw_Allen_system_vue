@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Crawler from '@/page/Node/Crawler'
+import webNav from '@/page/Node/webNav' 
 
 Vue.use(Router)
 
 export default new Router({
   mode:'history',
-  routes: [
+  routes: [ 
     {
-      path: '/Crawler',
-      name: 'Crawler',
-      component: Crawler
+      path:'/webNav',
+      name:'webNav',
+      component:webNav
     }
   ]
 })
