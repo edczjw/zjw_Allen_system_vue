@@ -16,15 +16,12 @@ const axios = {
         return res;
     }, 
 
-    // 上传营业执照
-    async uploadLicense(paramsOst){   
+    // 录入网站接口
+    async editWebApi(paramsOst){   
         const res = await request({
-            url: '/apply/business/license/ocr',
+            url: '/saveWebSite',
             method:'post', 
-            data:{
-                outerProcessNo:paramsOst.outerProcessNo,
-                imageBase64:paramsOst.imageBase64
-            }
+            data:paramsOst
         });  
         return res;
     },

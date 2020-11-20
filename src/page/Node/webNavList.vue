@@ -2,7 +2,7 @@
     <!-- 爬虫数据的模块集合 -->
     <div class="WebNavList_wrapper"> 
         <ul>
-            <li v-for="(item,index) in WebNavList" :key="index"> 
+            <li v-for="(item,index) in WebNavList" :key="index" v-if="item.webType===1" > 
                 <a :href="item.webUrl" :title="item.webDesc" target="_blank">
                     <img :src="item.webLogo" alt="">
                     <h4>{{item.webName}}</h4>
@@ -28,7 +28,7 @@ export default {
         async getList(){ 
             const res = await this.$httpAxios.getWebNavList()
             if(res.code != '0000'){
-                console.log('出现异常')
+                alert('出现异常')
             }else{
                 this.WebNavList = res.data.webSiteList
             }
@@ -37,36 +37,34 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .WebNavList_wrapper{ 
-    width: 100%;    
-    border: 1px solid #000;
-        ul{   
-    width: 80%;    
-    border: 1px solid #000;
+    width: 100%;     
+        ul{    
+            max-width: 1180px; 
+            margin: 0 auto;
             display: flex; 
-            justify-content: flex-start;
+            justify-content: center; 
             align-items: center;
             flex-wrap: wrap;
-            li{  
-                width: 260px;
-                height: 160px;
-                margin: 10px; 
-                border-radius: 3px;
-                box-shadow: 0 0 10px 2px #eeeeee;  
+            li{   
+                width: 270px; 
+                padding: 20px;
+                margin: 10px;  
+                box-shadow: 0 0 7px 2px #eee;  
                 position: relative;
-                transition: all .2s;
+                transition: all .7s;
                 text-align: center;
                 display: table;
                 background-color: #fff;
+                cursor: pointer;
                 h4{ 
                     margin-bottom: 10px;
                 }
                 h6{
                     color: #999;
                     text-align: justify;
-                    text-indent: 2em;
-                    padding: 0 15px; 
+                    text-indent: 2em; 
                     overflow: hidden;
                     text-overflow: ellipsis;
                     display: -webkit-box;
@@ -79,21 +77,15 @@ export default {
                     vertical-align: middle;
                 }
                 img{
-                    width: 100px;
-                    height: auto; 
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 35px;  
+                    object-fit: fill;
                     margin-bottom: 10px;
+                    opacity: .8;
                 }
-            }
-            li:before{
-                position: absolute;
-                top:0;
-                right: -10px;
-                content: ' ';  
-                border-left: 20px solid transparent;
-                border-right: 20px solid transparent; 
-                border-bottom: 20px solid #7d2ec7d3;
-                transform: rotate(45deg);
-            }
+            } 
             li:hover{  
                 transform: translateY(-6px);
             }

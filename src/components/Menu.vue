@@ -14,14 +14,22 @@
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b"> 
-        <el-menu-item index="1">
+        <el-menu-item index="myHome">
             <i class="el-icon-s-flag"></i>
             <span slot="title">系统首页</span>
         </el-menu-item>  
-        <el-menu-item index="webNav">
-            <i class="el-icon-s-management"></i>
-            <span slot="title">前端导航</span>
-        </el-menu-item>  
+
+        <el-submenu>
+            <template slot="title">
+                <i class="el-icon-s-management"></i>
+                <span slot="title">导航</span>
+            </template>
+            <el-menu-item-group> 
+                <el-menu-item index="webNavList">前端技术框架</el-menu-item>
+                <el-menu-item index="UiNavList">UI框架</el-menu-item>
+            </el-menu-item-group>
+        </el-submenu>  
+
         </el-menu> 
         <div class="Menu_out_footer" @click="logout()"> 
             <i class="el-icon-switch-button"></i>
@@ -106,10 +114,10 @@ export default{
     }
     .MenuCol{ 
         position: absolute;
-        right: -12.5px;
+        right: -17.5px;
         top: 50%;   
-        width: 25px;
-        height: 25px; 
+        width: 35px;
+        height: 35px; 
         display: flex;
         justify-content: center;
         align-items: center; 
@@ -118,6 +126,7 @@ export default{
         color: #ffffff;
         font-weight: bold;
         cursor: pointer; 
+        border-radius: 50%;
     }
     .MenuCol:hover{
         animation: traote 1s ease-in-out infinite alternate;

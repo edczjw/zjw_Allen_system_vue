@@ -48,7 +48,7 @@ export default {
 html,body{
   height: 100%;
   overflow: hidden;
-  font-family: '仿宋';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #app {
   height: 100%;
